@@ -1,19 +1,103 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-    cabeçalho
-    </header>
-    <main>
-        CONTEUDO PRICIPAL
+<html lang=¨pt-br¨>
+    <head>
+        <title>tabelas em html</title>
+    </head>
+    <body>
+        <header>cabeçalho</header>
         <main>
-        <FOoter>
-            ROTAPE
-        </FOoter>
-</body>
+            <h1>DISTRIBUIDORA </h1>
+        
+            <table border="1">
+                <!--cabeçalho da tabela-->
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>produto</th>
+                        <th>quantidade</th>
+                        <th>preço</th>
+                        <th>total</th>
+                    </tr>
+                </thead>
+                <!--corpo da tabela-->
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>COCA COLA</td>
+                        <td>300</td>
+                        <td>$ 6.00</td>
+                        <td>$ 1.800,00</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>WHISK JACK DANIELS</td>
+                        <td>100</td>
+                        <td>$ 997,99</td>
+                        <td>$ 99799,00</td>
+                    </tr>
+                        <tr>
+                        <td></td>
+                        <td>gin de uva </td>
+                        <td>40</td>
+                        <td>$ 159,99</td>
+                        <td>$ 6399,60</td>
+                    </tr>
+                </tbody>
+                <!--radape da tabela-->
+                </tfoot>
+                <tr>
+                                <td colspan="4">total geral</t>
+                    <td>$ 107998,60</td>
+                </tr>
+                <tfoot>
+            </table>
+
+        <!--nova tabela linhas e clunas mescladas-->
+        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="2">3</th>
+                    <th colspan="2">vinho rose</th>
+                    <th colspan="2">O vinho rosé é um vinho de cor rosada, que pode variar desde tons muito claros a tons mais intensos</th>
+                    <th colspan="2">507659</th>
+                </tr>
+                <tr>
+                    <th>quantidade</th>
+                    <th>preço</th>
+                </tr>
+            </thead>
+            <tbody>         <td>5</td>
+                    <td>$ 100,00
+                    <td>$ 500,00</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>guarana</td>
+                    <td>124</td>
+                    <td>$ 5,00
+                    <td>$ 620,00</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>baly de melancia</td>
+                    <td>30</td>
+                    <td>$ 12,00
+                    <td>$ ,00</td>
+                </tr>
+            </tbody>   
+            <!--rodape da tabela-->
+            <tfoot>
+                <tr>
+                    <td>total geral</td>
+                    <td>$40.000</td>
+                </tr>
+            </tfoot>
+        </table>
+        <a href="https://www.ze.delivery/produtos/categoria/drinks-em-lata" target="_blank" rel="noopener noreferrer">
+            ze derliver
+        </a>
+        <img src="download.jpg" alt="bebidas">
+        </main>
+        <footer>rodapé</footer>
+    </body>
 </html>
