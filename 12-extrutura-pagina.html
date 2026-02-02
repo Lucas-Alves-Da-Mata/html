@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neymar Jr. | Página Oficial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neymar-gold: #D4AF37;
+            --neymar-green: #009739;
+            --neymar-yellow: #FEDD00;
+            --neymar-black: #1a1a1a;
+            --neymar-gray: #f5f5f5;
+            --neymar-dark-gray: #333;
+            --neymar-white: #ffffff;
+            --neymar-red: #e53935;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--neymar-dark-gray);
+            background: linear-gradient(135deg, #f9f9f9 0%, #e8e8e8 100%);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(120deg, var(--neymar-black) 0%, #2a2a2a 100%);
+            padding: 1.5rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--neymar-gold);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            font-size: 2.2rem;
+            color: var(--neymar-gold);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+        }
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            background: linear-gradient(45deg, var(--neymar-yellow), var(--neymar-gold), var(--neymar-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-text span {
+            color: var(--neymar-white);
+            opacity: 0.9;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        
+        nav a {
+            color: var(--neymar-white);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: var(--transition);
+            position: relative;
+            opacity: 0.85;
+        }
+        
+        nav a:hover, nav a.active {
+            opacity: 1;
+            background: rgba(212, 175, 55, 0.15);
+            box-shadow: 0 0 15px rgba(254, 221, 0, 0.3);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--neymar-yellow);
+            transition: var(--transition);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--neymar-yellow), var(--neymar-gold));
+            z-index: -1;
+            transition: var(--transition);
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+        
+        .btn:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .btn-login {
+            background: transparent;
+            color: var(--neymar-white);
+            box-shadow: 0 0 0 2px var(--neymar-yellow);
+        }
+        
+        .btn-login:hover {
+            color: var(--neymar-black);
+            box-shadow: 0 0 0 2px var(--neymar-yellow);
+        }
+        
+        .btn-register {
+            background: linear-gradient(45deg, var(--neymar-green), #00782d);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 151, 57, 0.3);
+        }
+        
+        .btn-register:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 151, 57, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(26, 26, 26, 0.85)), url('https://placehold.co/1200x600/009739/ffffff?text=Neymar+Jr&font=montserrat&font_size=80');
+            background-size: cover;
+            background-position: center;
+            padding: 6rem 5% 4rem;
+            text-align: center;
+            color: var(--neymar-white);
+            margin-bottom: 4rem;
+        }
+        
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(45deg, var(--neymar-yellow), var(--neymar-gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+        }
+        
+        .hero h1 span {
+            color: var(--neymar-white);
+            display: block;
+            font-size: 3.8rem;
+            margin-top: 10px;
+        }
+        
+        .hero p {
+            font-size: 1.8rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3.5rem;
+            margin-bottom: 5rem;
+        }
+        
+        .neymar-image {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+            border: 5px solid var(--neymar-white);
+            position: relative;
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+        
+        .neymar-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 151, 57, 0.15), rgba(254, 221, 0, 0.1));
+            z-index: 1;
+        }
+        
+        .neymar-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .neymar-image:hover img {
+            transform: scale(1.03);
+        }
+        
+        .paragraphs {
+            width: 100%;
+            max-width: 850px;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+        
+        .paragraph {
+            background: var(--neymar-white);
+            padding: 2.2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            position: relative;
+            border-left: 5px solid var(--neymar-gold);
+            transition: var(--transition);
+        }
+        
+        .paragraph:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+        }
+        
+        .paragraph h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.9rem;
+            margin-bottom: 1.2rem;
+            color: var(--neymar-black);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .paragraph h2::before {
+            content: '★';
+            color: var(--neymar-gold);
+            font-size: 1.4rem;
+        }
+        
+        .paragraph p {
+            font-size: 1.15rem;
+            color: var(--neymar-dark-gray);
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(120deg, var(--neymar-black) 0%, #151515 100%);
+            color: var(--neymar-white);
+            padding: 3.5rem 5% 2rem;
+            border-top: 3px solid var(--neymar-gold);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2.5rem;
+        }
+        
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .footer-logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.2rem;
+            background: linear-gradient(45deg, var(--neymar-yellow), var(--neymar-gold), var(--neymar-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+        
+        .footer-logo-text span {
+            color: var(--neymar-white);
+            opacity: 0.9;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 25px;
+            margin-top: 15px;
+        }
+        
+        .social-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+            transform: scale(0);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .social-icon.whatsapp::before {
+            background: linear-gradient(45deg, #25D366, #0dc85f);
+            transform: scale(1);
+        }
+        
+        .social-icon:hover::before {
+            transform: scale(1.1);
+        }
+        
+        .social-icon.instagram {
+            color: white;
+        }
+        
+        .social-icon.whatsapp {
+            color: white;
+        }
+        
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            font-size: 1.05rem;
+            opacity: 0.85;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            nav ul {
+                gap: 1.2rem;
+            }
+            
+            nav a {
+                font-size: 0.9rem;
+                padding: 6px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero h1 span {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 1.2rem 5%;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+            
+            .auth-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .btn {
+                padding: 8px 18px;
+                font-size: 0.85rem;
+            }
+            
+            .hero {
+                padding: 4rem 5% 3rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero h1 span {
+                font-size: 2.4rem;
+            }
+            
+            .hero p {
+                font-size: 1.35rem;
+            }
+            
+            .paragraphs {
+                gap: 2rem;
+            }
+            
+            .paragraph {
+                padding: 1.8rem;
+            }
+            
+            .paragraph h2 {
+                font-size: 1.7rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            nav ul {
+                gap: 5px;
+            }
+            
+            nav a {
+                font-size: 0.8rem;
+                padding: 5px 8px;
+            }
+            
+            .btn {
+                padding: 7px 15px;
+                font-size: 0.8rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero h1 span {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.25rem;
+            }
+            
+            .neymar-image {
+                max-width: 100%;
+            }
+            
+            .social-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.5rem;
+            }
+            
+            .copyright {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <a href="#" class="logo">
+            <div class="logo-icon">⚽</div>
+            <div class="logo-text">Neymar<span>Jr</span></div>
+        </a>
+        
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        
+        <div class="auth-buttons">
+            <button class="btn btn-login">Entrar</button>
+            <button class="btn btn-register">Cadastrar</button>
+        </div>
+    </header>
+    
+    <!-- Hero Section with Title and Subtitle -->
+    <section class="hero">
+        <h1>O Rei do <span>Drible e Magia</span></h1>
+        <p>Descubra a jornada extraordinária, os momentos épicos e a paixão que definem a carreira de um dos maiores jogadores de futebol da história.</p>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <section class="content-section">
+            <!-- Neymar Image -->
+            <div class="neymar-image">
+                <img src="Neymar-Al-Hilal-1-scaled-aspect-ratio-512-320-1.webp" alt="Neymar Jr em ação durante uma partida">
+            </div>
+            
+            <!-- Three Paragraphs -->
+            <div class="paragraphs">
+                <div class="paragraph" id="sobre">
+                    <h2>Carreira Brilhante</h2>
+                    <p>Neymar da Silva Santos Júnior iniciou sua trajetória no Santos FC, onde rapidamente se tornou uma sensação do futebol brasileiro. Suas habilidades extraordinárias, dribles desconcertantes e finalizações precisas chamaram a atenção do mundo. Em 2013, transferiu-se para o FC Barcelona, onde formou ao lado de Messi e Suárez o lendário trio ofensivo "MSN", conquistando a Champions League e outros títulos importantes. Sua jornada continuou no Paris Saint-Germain, onde se estabeleceu como um dos jogadores mais decisivos da Europa, antes de sua recente transferência para o Al Hilal, na Arábia Saudita.</p>
+                </div>
+                
+                <div class="paragraph">
+                    <h2>Estilo Inconfundível</h2>
+                    <p>Reconhecido por seu estilo de jogo único, Neymar combina técnica apurada, velocidade explosiva e uma criatividade que o torna imprevisível em campo. Suas comemorações icônicas, cortes de cabelo ousados e presença nas redes sociais fazem dele um ícone global além dos gramados. Sua capacidade de decidir partidas em momentos cruciais e seu espírito de liderança o consolidaram como uma das maiores estrelas do futebol mundial. Além disso, sua dedicação aos treinamentos e superação de lesões demonstram sua resiliência e paixão pelo esporte.</p>
+                </div>
+                
+                <div class="paragraph" id="contato">
+                    <h2>Legado e Impacto</h2>
+                    <p>Além das conquistas em clubes, Neymar é uma figura central na Seleção Brasileira, tendo participado de múltiplas Copas do Mundo e liderado a equipe em competições importantes como a Copa América. Fora dos campos, dedica-se a causas sociais através do Instituto Neymar Jr., que oferece oportunidades educacionais e esportivas para crianças carentes em Praia Grande. Sua influência transcende o futebol, sendo uma fonte de inspiração para milhões de jovens ao redor do mundo que sonham em seguir seus passos. Sua história continua sendo escrita com paixão, talento e uma dedicação inabalável ao esporte que ama.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-icon">⚽</div>
+                <div class="footer-logo-text">Neymar<span>Jr</span></div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" class="social-icon instagram" aria-label="Instagram">
+                    <span>📸</span>
+                </a>
+                <a href="#" class="social-icon whatsapp" aria-label="WhatsApp">
+                    <span>💬</span>
+                </a>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2026 Neymar Jr. Oficial. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple scroll behavior for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Button hover effects enhancement
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                button.style.transform = 'translateY(-2px)';
+            });
+            
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Social icon hover effect
+        document.querySelectorAll('.social-icon').forEach(icon => {
+            icon.addEventListener('mouseenter', () => {
+                icon.style.transform = 'translateY(-3px) scale(1.1)';
+                icon.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.4)';
+            });
+            
+            icon.addEventListener('mouseleave', () => {
+                icon.style.transform = 'translateY(0) scale(1)';
+                icon.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.3)';
+            });
+        });
+    </script>
+</body>
+</html>
+
